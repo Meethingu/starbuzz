@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "252562795703",
+    "project_id": "sadguru-42ccf",
+    "storage_bucket": "sadguru-42ccf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252562795703:android:f1fdbf1c3a84106c8c3132",
+        "android_client_info": {
+          "package_name": "com.example.sadguru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252562795703-petg9jm4en4636stj8d9fevb22j8k27d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sadguru",
+            "certificate_hash": "d6c883ad303938b7b11db523121b5fdeac31d6c5"
+          }
+        },
+        {
+          "client_id": "252562795703-smnd3crnnvd0nl8cr19b2408d7i5chda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMNhjG7AQaLlnKS_c8Y5ZocskeANAZ2Iw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252562795703-smnd3crnnvd0nl8cr19b2408d7i5chda.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
