@@ -68,21 +68,11 @@ class _HomeScreenState extends State<HomeScreen> {
           selectedFontSize: 12.0,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
-              title: Text(
-                'New',
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontFamily: "Poppins",
-                ),
-              ),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
+              icon: Icon(Icons.today),
               title: new Text(
                 'Today',
                 style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: 16.0,
                   fontFamily: "Poppins",
                 ),
               ),
@@ -92,47 +82,27 @@ class _HomeScreenState extends State<HomeScreen> {
               title: Text(
                 'Tommorrow',
                 style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: 16.0,
                   fontFamily: "Poppins",
                 ),
               ),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
+              icon: Icon(Icons.access_alarm),
               title: Text(
                 'Pending',
                 style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: 16.0,
                   fontFamily: "Poppins",
                 ),
               ),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
-              title: Text(
-                'Cancelled',
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontFamily: "Poppins",
-                ),
-              ),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
-              title: Text(
-                'Missed',
-                style: TextStyle(
-                  fontSize: 12.0,
-                  fontFamily: "Poppins",
-                ),
-              ),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.menu),
+              icon: Icon(Icons.where_to_vote),
               title: Text(
                 'Done',
                 style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: 16.0,
                   fontFamily: "Poppins",
                 ),
               ),

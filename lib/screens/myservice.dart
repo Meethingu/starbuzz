@@ -36,7 +36,7 @@ class _MyServiceState extends State<MyService> {
                       Container(
                         width: double.infinity,
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 15),
+                            horizontal: 15, vertical: 5),
                         padding: const EdgeInsets.all(3.0),
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.black),
@@ -84,7 +84,7 @@ class _MyServiceState extends State<MyService> {
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -98,7 +98,13 @@ class _MyServiceState extends State<MyService> {
           child: Container(
             margin: EdgeInsets.only(bottom: 20),
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            color: Colors.black12,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                offset: const Offset(3.0, 3.0),
+                color: Colors.black12,
+                blurRadius: 2.0,
+              ),
+            ]),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -107,7 +113,11 @@ class _MyServiceState extends State<MyService> {
                   children: [
                     Text(
                       name,
-                      style: TextStyle(color: red, fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -115,7 +125,10 @@ class _MyServiceState extends State<MyService> {
                     Text(
                       'General Termitte Control',
                       style: TextStyle(
-                          color: Colors.grey, fontWeight: FontWeight.w500),
+                        color: Colors.black54,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                      ),
                     ),
                     SizedBox(
                       height: 5,
@@ -123,7 +136,7 @@ class _MyServiceState extends State<MyService> {
                     Text(
                       'Premises Type : Residential',
                       style: TextStyle(
-                          color: Colors.grey, fontWeight: FontWeight.w500),
+                          color: Colors.black54, fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
                       width: 5,
@@ -134,7 +147,9 @@ class _MyServiceState extends State<MyService> {
                     Text(
                       "Location : Kandivali East",
                       style: TextStyle(
-                          color: Colors.grey, fontWeight: FontWeight.w500),
+                          color: Colors.black54,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14),
                     ),
                     SizedBox(
                       height: 15,
@@ -160,6 +175,7 @@ class _MyServiceState extends State<MyService> {
                       child: Text(
                         "Customer Details",
                         style: TextStyle(
+                          fontSize: 16,
                           color: Colors.white,
                         ),
                       ),
@@ -176,8 +192,10 @@ class _MyServiceState extends State<MyService> {
                     children: [
                       Text(
                         date,
-                        style:
-                            TextStyle(color: red, fontWeight: FontWeight.w700),
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700),
                       ),
                       SizedBox(
                         height: 10,
@@ -185,43 +203,41 @@ class _MyServiceState extends State<MyService> {
                       Text(
                         time,
                         style: TextStyle(
-                            color: Colors.grey, fontWeight: FontWeight.w500),
+                            fontSize: 16,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w500),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Container(
-                        decoration:
-                            BoxDecoration(border: Border.all(color: red)),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Support Technicians Name :",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    techname,
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ],
-                              ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Support Technicians Name :",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  techname,
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       )
                     ],
                   ),
@@ -232,5 +248,15 @@ class _MyServiceState extends State<MyService> {
         )
       ],
     );
+  }
+
+  Widget getbody() {
+    return ListView.builder(itemBuilder: (context, index) {
+      return getCard();
+    });
+  }
+
+  Widget getCard() {
+    return Card();
   }
 }

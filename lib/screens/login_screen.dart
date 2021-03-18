@@ -1,14 +1,10 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_signin_button/button_list.dart';
-import 'package:flutter_signin_button/button_view.dart';
 
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:sadguru/screens/demopage.dart';
+import 'package:sadguru/screens/myservice.dart';
 import 'package:sadguru/values/ColorScheme.dart';
 import 'package:sadguru/widgets/auth.dart';
+import 'package:sadguru/widgets/listing_employes.dart';
 
 import 'homeScreen.dart';
 import 'signup_screen.dart';
@@ -25,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: red,
       appBar: AppBar(
         title: Text(
-          "Your Plan",
+          "Login",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
         elevation: 0,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sadguru/pages/incentivepage.dart';
 import 'package:sadguru/pages/profile.dart';
 import 'package:sadguru/pages/recharge.dart';
 import 'package:sadguru/screens/login_screen.dart';
@@ -19,11 +20,17 @@ class _DrawersState extends State<Drawers> {
           UserAccountsDrawerHeader(
             accountName: Text(
               "Santosh Shinde",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
             ),
             accountEmail: Text(
               "santoshshinde@gmail.com",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 14,
+              ),
             ),
             currentAccountPicture: CircleAvatar(
               backgroundColor: Theme.of(context).platform == TargetPlatform.iOS
@@ -42,7 +49,12 @@ class _DrawersState extends State<Drawers> {
             ],
           ),
           ListTile(
-            title: Text("You are Active"),
+            title: Text(
+              "You are Active",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
             trailing: Icon(Icons.arrow_right),
             // onTap: () {
             //   Navigator.of(context).pop();
@@ -56,7 +68,12 @@ class _DrawersState extends State<Drawers> {
           ),
           Divider(),
           ListTile(
-            title: Text("My Service"),
+            title: Text(
+              "My Service",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
             trailing: Icon(Icons.arrow_right),
             // onTap: () {
             //   Navigator.of(context).pop();
@@ -70,13 +87,23 @@ class _DrawersState extends State<Drawers> {
           ),
           Divider(),
           ListTile(
-            title: Text("Payment History"),
+            title: Text(
+              "Payment History",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
             trailing: Icon(Icons.arrow_right),
             onTap: () => Navigator.of(context).pop(),
           ),
           Divider(),
           ListTile(
-            title: Text("My Leave"),
+            title: Text(
+              "My Leave",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
             trailing: Icon(Icons.arrow_right),
             // onTap: () {
             //   Navigator.of(context).pop();
@@ -90,33 +117,51 @@ class _DrawersState extends State<Drawers> {
           ),
           Divider(),
           ListTile(
-            title: Text("Incentive Rate Card"),
+            title: Text(
+              "Incentive Rate Card",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
             trailing: Icon(Icons.arrow_right),
-            onTap: () => Navigator.of(context).pop(),
-          ),
-          Divider(),
-          ListTile(
-            title: Text("Profile"),
-            trailing: Icon(Icons.arrow_right),
-            // onTap: () {
-            //   Navigator.of(context).pop();
-            //   Navigator.of(context).push(
-            //     MaterialPageRoute(
-            //         builder: (BuildContext context) => NewPage("Page Two")),
-            //   );
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (BuildContext context) => IncentivePage()),
+              );
 
-            //   // Navigator.of(context).pushNamed("/a");
-            // },
+              //   // Navigator.of(context).pushNamed("/a");
+            },
           ),
           Divider(),
           ListTile(
-            title: Text("Call Support"),
+            title: Text(
+              "Profile",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+            trailing: Icon(Icons.arrow_right),
+          ),
+          Divider(),
+          ListTile(
+            title: Text(
+              "Call Support",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
             trailing: Icon(Icons.arrow_right),
             onTap: () => Navigator.of(context).pop(),
           ),
           Divider(),
           ListTile(
-            title: Text("Logout"),
+            title: Text(
+              "Logout",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
             trailing: Icon(Icons.arrow_right),
             // onTap: () {
             //   Navigator.of(context).pop();

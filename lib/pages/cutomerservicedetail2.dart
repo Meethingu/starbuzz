@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:sadguru/pages/cutomerservicedetail2.dart';
 import 'package:sadguru/values/ColorScheme.dart';
 
-class CustomerServiceDetails extends StatefulWidget {
+class CustomerServiceDetails2 extends StatefulWidget {
   @override
-  _CustomerServiceDetailsState createState() => _CustomerServiceDetailsState();
+  _CustomerServiceDetails2State createState() =>
+      _CustomerServiceDetails2State();
 }
 
-class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
-  String buttonToChange = "Start";
+class _CustomerServiceDetails2State extends State<CustomerServiceDetails2> {
+  String _radioValue; //Initial definition of radio button value
+  String choice;
 
-  void changedata() {
+  void radioButtonChanges(String value) {
     setState(() {
-      buttonToChange = "Completed";
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => CustomerServiceDetails2()));
+      _radioValue = value;
+      switch (value) {
+        case 'one':
+          choice = value;
+          break;
+        case 'two':
+          choice = value;
+          break;
+        case 'three':
+          choice = value;
+          break;
+        default:
+          choice = null;
+      }
+      debugPrint(choice); //Debug the choice in console
     });
   }
 
@@ -136,7 +149,7 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
                                     style: TextStyle(
                                         fontSize: 18,
                                         color: Colors.black,
-                                        fontWeight: FontWeight.w700),
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   SizedBox(
                                     height: 10,
@@ -154,8 +167,8 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
                                   Text(
                                     'Premises Sq. Ft. Area : 10000 Sq.Ft.',
                                     style: TextStyle(
-                                        fontSize: 16,
                                         color: Colors.black54,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(
@@ -165,6 +178,7 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
                                     "Service Id : SPC002211",
                                     style: TextStyle(
                                         fontSize: 16,
+                                        color: Colors.black54,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(
@@ -174,6 +188,7 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
                                     "Service Frequency Number : 3rd Service",
                                     style: TextStyle(
                                         fontSize: 16,
+                                        color: Colors.black54,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(
@@ -253,15 +268,15 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
                                   Text(
                                     'Service Time : 02.30 pm',
                                     style: TextStyle(
-                                        fontSize: 16,
                                         color: Colors.black54,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(
                                     height: 15,
                                   ),
                                   Text(
-                                    "Chemical  Details",
+                                    " Payment Summary",
                                     style: TextStyle(
                                       fontSize: 18,
                                       color: Colors.black,
@@ -269,101 +284,227 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    'Chemical Name : Responser ',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    'Chemical Qty : 10ml',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
                                     height: 15,
                                   ),
-                                  TextField(
-                                    decoration: new InputDecoration(
-                                        border: new OutlineInputBorder(
-                                          borderRadius: const BorderRadius.all(
-                                            const Radius.circular(10.0),
-                                          ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Amount',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      Expanded(
+                                        child: Container(),
+                                      ),
+                                      Text(
+                                        "1000.00",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                        filled: true,
-                                        hintStyle: new TextStyle(
-                                            color: Colors.grey[800]),
-                                        hintText: "Service Instruction",
-                                        fillColor: Colors.white70),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'GST18%',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      Expanded(
+                                        child: Container(),
+                                      ),
+                                      Text(
+                                        "180.00",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Divider(
+                                    thickness: 3,
+                                    color: Colors.black,
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Bill Amount',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      Expanded(
+                                        child: Container(),
+                                      ),
+                                      Text(
+                                        "1180.00",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Advance / Part Amount',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.black54,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      Expanded(
+                                        child: Container(),
+                                      ),
+                                      Text(
+                                        "500.00",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Divider(
+                                    thickness: 3,
+                                    color: Colors.black,
+                                  ),
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Total Amount',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                      Expanded(
+                                        child: Container(),
+                                      ),
+                                      Text(
+                                        "680.00",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Radio(
+                                        value: 'one',
+                                        groupValue: _radioValue,
+                                        onChanged: radioButtonChanges,
+                                        activeColor: Colors.blue,
+                                      ),
+                                      Text(
+                                        "Cash",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Radio(
+                                        value: 'one',
+                                        groupValue: _radioValue,
+                                        onChanged: radioButtonChanges,
+                                        activeColor: Colors.blue,
+                                      ),
+                                      Text(
+                                        "Cheque",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Radio(
+                                        value: 'one',
+                                        groupValue: _radioValue,
+                                        onChanged: radioButtonChanges,
+                                        activeColor: Colors.blue,
+                                      ),
+                                      Text(
+                                        "online",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Received Amount : ",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Text(
+                                        "380",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        "Balanced Amount : ",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Text(
+                                        "380",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text(
-                                    "Customer Details",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'Customer Name : Santosh Shinde',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    'Address : Flat No .1002 , Madhu Jeevan Jyoti, Kasturb Road No.1, Borivali',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    "Location : Borivali East",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    "Consult Person : Mr. Dhiraj Shinde",
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                  SizedBox(
-                                    height: 15,
+                                    height: 20,
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 20),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
                                       children: [
                                         RaisedButton(
                                           color: Colors.green,
@@ -376,21 +517,19 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
                                             //     MaterialPageRoute(
                                             //         builder: (context) =>
                                             //             CustomerServiceDetails2()));
-
-                                            changedata();
                                           },
                                           child: Text(
-                                            "$buttonToChange",
+                                            "Confirm",
                                             style: TextStyle(
                                               color: Colors.white,
                                             ),
                                           ),
                                         ),
-                                        Expanded(
-                                          child: Container(),
+                                        SizedBox(
+                                          width: 40,
                                         ),
                                         RaisedButton(
-                                          color: Colors.blue,
+                                          color: Colors.grey,
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(20)),
@@ -402,56 +541,7 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
                                             //             CustomerServiceDetails()));
                                           },
                                           child: Text(
-                                            "Reschedule",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20),
-                                    child: Row(
-                                      children: [
-                                        RaisedButton(
-                                          color: red,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          onPressed: () {
-                                            // Navigator.push(
-                                            //     context,
-                                            //     MaterialPageRoute(
-                                            //         builder: (context) =>
-                                            //             CustomerServiceDetails()));
-                                          },
-                                          child: Text(
-                                            "cancel",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ),
-                                        Expanded(
-                                          child: Container(),
-                                        ),
-                                        RaisedButton(
-                                          color: Colors.black38,
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20)),
-                                          onPressed: () {
-                                            // Navigator.push(
-                                            //     context,
-                                            //     MaterialPageRoute(
-                                            //         builder: (context) =>
-                                            //             CustomerServiceDetails()));
-                                          },
-                                          child: Text(
-                                            "Customer Sign",
+                                            "Close",
                                             style: TextStyle(
                                               color: Colors.white,
                                             ),
@@ -491,4 +581,14 @@ class _CustomerServiceDetailsState extends State<CustomerServiceDetails> {
       ),
     );
   }
+
+  // void cash(int e) {
+  //   setState(() {
+  //     if (e == 1) {
+  //       group = 1;
+  //     } else if (e == 2) {
+  //       group = 2;
+  //     }
+  //   });
+  // }
 }

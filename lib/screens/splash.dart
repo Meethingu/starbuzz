@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'login_screen.dart';
-import 'screenInIt.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -42,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ScreenInit(),
+        builder: (context) => LoginScreen(),
       ),
     );
   }
